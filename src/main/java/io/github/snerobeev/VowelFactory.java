@@ -39,11 +39,11 @@ public class VowelFactory {
   /**
    * Returns a {@link VowelCheckable} instance for the specified language.
    * <p>
-   * This method supports a limited set of languages (e.g., Russian, English, Hungarian).
+   * This method supports a limited set of languages (e.g., Russian, English, Hungarian, Spanish).
    * If an unsupported language is requested, an exception is thrown with a link to
    * the GitHub repository where new languages can be contributed.
    *
-   * @param language The ISO language code (e.g., "ru", "en", "hu").
+   * @param language The ISO language code (e.g., "ru", "en", "hu", "es").
    * @return A concrete implementation of {@link VowelCheckable} for the given language.
    * @throws IllegalArgumentException if the language format is invalid or if the language
    *                                  is not currently supported by the factory.
@@ -59,6 +59,7 @@ public class VowelFactory {
       case "ru" -> new VowelRu();
       case "en" -> new VowelEn();
       case "hu" -> new VowelHu();
+      case "es" -> new VowelEs();
       default -> throw new IllegalArgumentException("Unsupported language.You can add your language here: " +
                                                         "https://github.com/Sergei-Nerobeev/vowel4j");
     };
