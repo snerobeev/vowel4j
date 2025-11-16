@@ -13,6 +13,7 @@ class VowelFactoryTest {
     assertTrue(VowelFactory.getVowelChecker("ru") instanceof VowelRu);
     assertTrue(VowelFactory.getVowelChecker("en") instanceof VowelEn);
     assertTrue(VowelFactory.getVowelChecker("hu") instanceof VowelHu);
+    assertTrue(VowelFactory.getVowelChecker("es") instanceof VowelEs);
 
   }
   @DisplayName("Not throw exception for supported language")
@@ -22,6 +23,7 @@ class VowelFactoryTest {
     assertDoesNotThrow(() -> VowelFactory.getVowelChecker("ru"));
     assertDoesNotThrow(() -> VowelFactory.getVowelChecker("en"));
     assertDoesNotThrow(() -> VowelFactory.getVowelChecker("hu"));
+    assertDoesNotThrow(() -> VowelFactory.getVowelChecker("es"));
   }
 
   @DisplayName("Should throw exception for unsupported language")
